@@ -7,32 +7,34 @@
 {% block container %}
 
     <div class="row">
-        <div class="col-3">
+        <div class="col-4">
+        <h2>LLENE EL FORMULARIO</h2>
             <form action="" method="post">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="monto" >Monto</label>
-                    <input type="number" name="monto" id="monto" class="form-control" required autofocus>
+                    <label for="monto" >Monto:</label>
+                    <input type="number" name="monto" id="monto" class="form-control" placeholder="15600" required autofocus>
                 </div>
 
                 <div class="mb-3">
-                    <label for="tasa">Tasa</label>
-                    <input type="number" name="tasa" id="tasa" class="form-control" required>
+                    <label for="tasa">Tasa:</label>
+                    <input type="number" name="tasa" id="tasa" class="form-control" placeholder="20" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="plazo">Plazo</label>
-                    <input type="number" name="plazo" id="plazo" class="form-control" required>
+                    <label for="plazo">Plazo:</label>
+                    <input type="number" name="plazo" id="plazo" class="form-control" placeholder="Ingrese en años" required>
                 </div>
 
                 <div class="mb-3">
                     <input type="submit" class="btn btn-success" value="Calcular">
                 </div>
             </form>
+            <br>
         </div>
         <!--Datos-->
         <div class="col-9">
-        <h2>Prestamos</h2>
+        <h2>DATOS DEL PRÉSTAMO</h2>
             <table class="table table-hover">
                 <thead>
                     <tr>

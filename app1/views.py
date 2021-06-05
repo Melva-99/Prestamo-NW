@@ -5,11 +5,11 @@ from django.http import HttpResponse
 
 pagos = [
     {
-        'monto': '16500',
-        'tasa': '2',
-        'plazo' : '2',
-        'cuotas': '980',
-        'total' : '9000'
+        'monto': '14000',
+        'tasa': '20',
+        'plazo' : '3',
+        'cuota': '520.29',
+        'total' : '18730.44'
     }
 ]
 
@@ -26,7 +26,7 @@ def formulario(request):
 
         c = (monto*r)/(1-(1+r)**-n)
 
-        total = monto + monto * r * n
+        total = c*n
 
         ctx = {
             'pagos' : pagos
@@ -43,7 +43,7 @@ def formulario(request):
         return render(request, 'form/formulario.html', ctx)
     else:
           ctx = {
-               'cuota' : pagos
+               'pagos' : pagos
           }
           
           return render(request, 'form/formulario.html', ctx)
